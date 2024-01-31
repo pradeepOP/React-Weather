@@ -56,7 +56,7 @@ function App() {
   return (
     <div className=" w-full min-h-[100vh]">
       {/* body */}
-      <div className="flex flex-col items-center px-10 py-12 font-mono rounded-md">
+      <div className="flex flex-col items-center px-8 py-12 font-mono rounded-md">
         {/* header and Logo */}
         <div className="flex items-center">
           <h1 className="text-3xl font-semibold text-center text-tertiary-color">
@@ -86,13 +86,13 @@ function App() {
         {/* output */}
         {/* error */}
         {error && (
-          <p className="w-1/3 px-3 py-2 mx-auto mt-6 text-center text-white rounded-md bg-red-400/90 lg:w-1/4">
+          <p className="w-full px-3 py-2 mx-auto mt-6 text-center text-white rounded-md md:w-1/3 bg-red-400/90 lg:w-1/4">
             {error}
           </p>
         )}
         {/* output data */}
         {weatherData && (
-          <div className="w-2/3 px-10 mt-20 text-gray-800 rounded-lg bg-gradient-to-r to-primary-color from-tertiary-color lg:w-1/2 py-14 ">
+          <div className="w-full px-10 mt-20 text-gray-800 rounded-lg md:w-1/3 bg-gradient-to-r to-primary-color from-tertiary-color py-14">
             <div className="flex items-center justify-around text-xl ">
               <div>
                 <img
@@ -107,20 +107,24 @@ function App() {
                 <p className="text-xl tracking-wider">{weatherData.cityName}</p>
               </div>
             </div>
-            <p className="mt-10 text-center text-8xl">
+            <p className="mt-10 text-center text-7xl md:text-8xl">
               {weatherData.temperature}&deg;c
             </p>
 
-            <div className="flex flex-col gap-6 mt-20">
-              <div className="flex items-center justify-around text-xl">
-                <p>Clouds: {weatherData.cloud}%</p>
-                <p>Humidity: {weatherData.humidity}%</p>
-              </div>
-              <div className="flex items-center justify-around text-xl">
-                <p>Wind: {weatherData.wind}m/s</p>
-                <p>Pressure: {weatherData.pressure}hpa</p>
-              </div>
-            </div>
+            <ul className="w-1/2 mx-auto mt-8 space-y-5 text-xl text-left md:text-2xl">
+              <li>
+                <p>Clouds:{weatherData.cloud}%</p>
+              </li>
+              <li>
+                <p>Humidity:{weatherData.humidity}%</p>
+              </li>
+              <li>
+                <p>Wind:{weatherData.wind}m/s</p>
+              </li>
+              <li>
+                <p>Pressure:{weatherData.pressure}hpa</p>
+              </li>
+            </ul>
           </div>
         )}
       </div>
